@@ -1,8 +1,11 @@
 var webpack = require('webpack');
 var path = require('path');
 
+var env = process.env.NODE_ENV;
+
 module.exports = {
     devtool: 'inline-source-map', // gives line numbers in case of errors
+    mode: env || 'development',
     entry: [
         'webpack-dev-server/client?http://127.0.0.1:8080',
         'webpack/hot/only-dev-server',
@@ -13,24 +16,21 @@ module.exports = {
         filename: 'bundle.js'
     },
     resolve: {
-        modulesDirectories: [
+        modules: [
             'node_modules',
-            'src'
+            path.resolve(__dirname, 'src')
         ],
-        extentions: [
-            '',
-            '.js'
-        ]
+        extensions: [".js", ".json"]
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loader: [
-                    'react-hot',
-                    'babel?presets[]=react,presets[]=env'
-                ]
+                loader: 'babel-loader',
+                options: {
+                    presets: 'env'
+                }
             }
         ],
     },
