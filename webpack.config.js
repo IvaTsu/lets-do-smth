@@ -19,7 +19,10 @@ module.exports = {
             'node_modules',
             path.resolve(__dirname, 'src')
         ],
-        extensions: [".js", ".json"]
+        extensions: [
+            '.js',
+            '.json'
+        ]
     },
     module: {
         rules: [
@@ -28,7 +31,10 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 options: {
-                    presets: 'env'
+                    presets: [
+                        'env',
+                        'react'
+                    ]
                 }
             }
         ],

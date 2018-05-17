@@ -7,6 +7,9 @@
   "author": "IvaTsu <ivan.tsud@gmail.com>",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
   "dependencies": {
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
