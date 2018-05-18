@@ -1,5 +1,5 @@
 import React from 'react';
-import TaskList from './TaskList';
+import TaskList from './TaskList/TaskList';
 
 const tasks = [
     {
@@ -12,4 +12,4 @@ const tasks = [
     }
 ];
 
-export default () => <TaskList />;
+export default () => <TaskList tasks={tasks} />;
