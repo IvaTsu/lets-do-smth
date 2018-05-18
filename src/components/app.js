@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import TaskList from './TaskList/TaskList';
 
 const tasks = [
@@ -9,7 +9,23 @@ const tasks = [
     {
         task: 'do exercises',
         isCompleted: false
+    },
+    {
+        task: 'do eercises',
+        isCompleted: false
     }
 ];
 
-export default () => <TaskList tasks={tasks} />;
+export default class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            tasks
+        };
+    }
+    render() {
+        return(
+            <TaskList tasks={tasks} />
+        );
+    }
+}
