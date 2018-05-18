@@ -1,4 +1,5 @@
 import React from 'react';
+import TaskList from './TaskList';
 
 const tasks = [
     {
@@ -11,4 +12,4 @@ const tasks = [
     }
 ];
 
-export default () => <h1>Hello!</h1>;
+export default () => <TaskList />;
