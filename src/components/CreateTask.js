@@ -1,14 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 
 export default class CreateTask extends Component {
-  _onCreateClick = (e) => {
+  constructor(props) {
+    super(props);
+    this.newTask = createRef();
+  }
+  _handleSubmit = (e) => {
     e.preventDefault();
+    console.log(this.newTask.current.value);
   };
+
   render() {
     return (
-      <form>
-        <input type="text" placeholder="What do I need to do?" />
-        <button onClick={e => this._onCreateClick(e)}>Create Task</button>
+      <form onSubmit={e => this._handleSubmit(e)}>
+        <input type="text" placeholder="What do I need to do?" ref={this.newTask} />
+        <button>Create Task</button>
       </form>
     );
   }
