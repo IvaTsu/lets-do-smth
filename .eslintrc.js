@@ -18,6 +18,12 @@ module.exports = {
                     ".jsx"
                 ]
             }
+        ],
+        "no-underscore-dangle": [
+            "error",
+            { 
+                "allowAfterThis": true 
+            }
         ]
     }
 };
