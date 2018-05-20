@@ -8,22 +8,28 @@ export default class TableBody extends Component {
         }
     }
 
-    _onClick = () => {
+    _onEditClick = () => {
+        this.setState({
+            isEditing: true
+        });
+    }
+
+    _onCancelClick = () => {
         this.setState({
             isEditing: !this.state.isEditing
-        })
-    }       
+        });
+    }
 
     render() {
         const { item } = this.props;
         const renderBtnsOnActiveEdit = this.state.isEditing ? (
                 <td>
-                    <button onClick={this._onClick}>Save</button>
-                    <button>Cancel</button>
+                    <button>Save</button>
+                    <button onClick={this._onCancelClick}>Cancel</button>
                 </td>
         ) : (
             <td>
-                <button onClick={this._onClick}>Edit</button>
+                <button onClick={this._onEditClick}>Edit</button>
                 <button>Exit</button>
             </td>
         );
