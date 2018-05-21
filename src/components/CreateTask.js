@@ -5,9 +5,10 @@ export default class CreateTask extends Component {
     super(props);
     this.newTask = createRef();
   }
+
   _handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.newTask.current.value);
+    this.props.createTask(this.newTask.current.value);
   };
 
   render() {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import TaskList from './TaskList/TaskList';
 import CreateTask from './CreateTask';
 
@@ -13,9 +13,30 @@ const tasks = [
   },
 ];
 
-export default () => (
-  <div>
-    <CreateTask />
-    <TaskList tasks={tasks} />
-  </div>
-);
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tasks,
+    };
+  }
+
+  _createTask = (task) => {
+    this.state.tasks.push({
+      task,
+      isCompleted: false,
+    });
+    this.setState({
+      tasks: this.state.tasks,
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <CreateTask createTask={this._createTask} />
+        <TaskList tasks={tasks} />
+      </div>
+    );
+  }
+}
