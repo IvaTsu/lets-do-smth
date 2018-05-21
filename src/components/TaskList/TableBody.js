@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class TableBody extends Component {
   constructor(props) {
@@ -41,3 +42,7 @@ export default class TableBody extends Component {
     );
   }
 }
+
+TableBody.propTypes = {
+  item: PropTypes.string.isRequired,
+};

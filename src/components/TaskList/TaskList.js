@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TableHeader from './TableHeader';
 import TableBody from './TableBody';
 
-export default ({ tasks }) => (
+const TaskList = ({ tasks }) => (
   <table>
     <TableHeader />
     <tbody>
@@ -15,3 +16,9 @@ export default ({ tasks }) => (
     </tbody>
   </table>
 );
+
+TaskList.propTypes = {
+  tasks: PropTypes.arrayOf(PropTypes.shape).isRequired,
+};
+
+export default TaskList;
