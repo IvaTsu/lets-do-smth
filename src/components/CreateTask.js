@@ -10,6 +10,7 @@ export default class CreateTask extends Component {
   _handleSubmit = (e) => {
     e.preventDefault();
     this.props.createTask(this.newTask.current.value);
+    this.newTask.current.value = '';
   };
 
   render() {
