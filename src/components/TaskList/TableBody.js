@@ -36,7 +36,9 @@ export default class TableBody extends Component {
     );
     return (
       <tr>
-        <td>{item}</td>
+        <td>
+          <button>{item}</button>
+        </td>
         {renderBtnsOnActiveEdit}
       </tr>
     );
