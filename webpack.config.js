@@ -39,6 +39,10 @@ module.exports = {
           plugins: ['transform-class-properties'],
         },
       },
+      {
+        test: /\.sass$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
     ],
   },
   plugins: [
