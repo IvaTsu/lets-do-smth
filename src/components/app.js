@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TaskList from './TaskList/TaskList';
 import CreateTask from './CreateTask';
+import './main.sass';
 
 const tasks = [
   {
@@ -34,6 +35,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
+        <h1>Hello!</h1>
         <CreateTask createTask={this._createTask} />
         <TaskList tasks={tasks} />
       </div>
