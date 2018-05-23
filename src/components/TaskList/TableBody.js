@@ -22,7 +22,7 @@ export default class TableBody extends Component {
   }
 
   render() {
-    const { item } = this.props;
+    const { item, isCompleted } = this.props;
     const renderBtnsOnActiveEdit = this.state.isEditing ? (
       <td>
         <button>Save</button>
@@ -34,11 +34,14 @@ export default class TableBody extends Component {
         <button>Exit</button>
       </td>
     );
+    const taskStyle = {
+      color: isCompleted ? 'green' : 'red',
+      cursor: 'pointer',
+    };
+    const renderOnCompleteStatusChange = <td style={taskStyle}>{item}</td>;
     return (
       <tr>
-        <td>
-          <button>{item}</button>
-        </td>
+        {renderOnCompleteStatusChange}
         {renderBtnsOnActiveEdit}
       </tr>
     );
@@ -47,4 +50,5 @@ export default class TableBody extends Component {
 
 TableBody.propTypes = {
   item: PropTypes.string.isRequired,
+  isCompleted: PropTypes.bool.isRequired,
 };

@@ -11,6 +11,7 @@ const TaskList = ({ tasks }) => (
         <TableBody
           key={item.task.toString()}
           item={item.task}
+          isCompleted={item.isCompleted}
         />
       ))}
     </tbody>

@@ -3,8 +3,8 @@ import React from 'react';
 export default () => (
   <thead>
     <tr>
-      <th>Tasks</th>
-      <th>Actions</th>
+      <th className="text">Tasks</th>
+      <th className="text">Actions</th>
     </tr>
   </thead>
 );

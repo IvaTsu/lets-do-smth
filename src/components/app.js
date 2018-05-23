@@ -10,7 +10,7 @@ const tasks = [
   },
   {
     task: 'do exercises',
-    isCompleted: false,
+    isCompleted: true,
   },
 ];
 
